@@ -16,5 +16,8 @@ public class Ex005{
 
     static void sum(int x, int y) {
         System.out.println("A soma deles é :" +(x+y));
+        System.out.println("A Multiplicação deles é: " + (x*y));
+        System.out.println("A Divisão deles é: " + (x/y));
+        System.out.println("A Subtração deles é: " + (x-y));
     }
 }
