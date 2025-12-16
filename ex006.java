@@ -1,4 +1,3 @@
-package estudosjava;
 import java.util.Scanner;
 
 public class Ex006{
