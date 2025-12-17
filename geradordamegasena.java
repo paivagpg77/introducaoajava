@@ -7,7 +7,7 @@ public class GeradorDaMegaSena {
 		int i = 0;
 		while( i < 6 ) {
 			int number = generate.nextInt(60);
-			System.out.println(number);
+			System.out.println("Número "+(i+1)+" :"+number);
 			i = i + 1;
 			
 		}
