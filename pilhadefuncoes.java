@@ -1,5 +1,5 @@
 package estudosjava;
-
+//pilha
 public class PilhaDeFuncoes {
 
     static void fun1(int a) {
