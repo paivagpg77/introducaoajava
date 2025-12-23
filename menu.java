@@ -1,8 +1,10 @@
+package estudosjava;
 import java.util.Scanner;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Random;
+import java.util.Arrays;
 
-//menu
 public class Menu {
 	static void data() {
 		Scanner sc = new Scanner(System.in);
@@ -96,7 +98,58 @@ public class Menu {
 		System.out.println(contagem);		
 	}	
 	
+	static void palavra_contida() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Digite uma palavra: ");
+		String p1  = sc.nextLine().toUpperCase();
+		System.out.println("Digite a segunda palavra: ");
+		String p2 = sc.nextLine().toUpperCase();
+		
+		if (p1.contains(p2)) {
+			System.out.println("A palavra 1 "+p1+" Está contida na palavra 2 "+p2);
+		}else {
+			System.out.println("Não tem nenhuma palavra contida");
+		}
+		
+	}
 	
+	static int[] VetorAleatorio(){
+		Scanner sc = new Scanner(System.in);
+		Random random = new Random();
+		
+		System.out.println("Digite o tamanho do vetor: ");
+		int tamanho = sc.nextInt();
+		System.out.println("Digite o intervalo mínimo do vetor: ");
+		int intervalo = sc.nextInt();
+		System.out.println("Digite o valor máximo do vetor: ");
+		int fim = sc.nextInt();
+		
+		int [] vetor = new int[tamanho];
+		for (int i = 0 ; i < tamanho; i++) {
+			vetor[i] = random.nextInt(fim - intervalo + 1) + intervalo;
+		}
+
+        System.out.println("O VETOR GERADO ALEATORIAMENTE É ESSE EM BAIXO:");
+        System.out.println(Arrays.toString(vetor));
+
+        return vetor;
+		
+	}
+	
+	static int vetorMaior(){
+		int [] vetor = VetorAleatorio();
+		int maior = vetor[0];
+		
+		for (int i = 1 ; i < vetor.length; i++) {
+			if (vetor[i] > maior) {
+				maior = vetor[i];
+			}
+		}return maior;
+	}	
+			
+			
+			
     static void despedida() {
         System.out.println("Programa encerrado. Até logo!");
 	
@@ -115,6 +168,9 @@ public class Menu {
             System.out.println("4 - Calculo da Hipotenusa");
             System.out.println("5 - Equação 2 Grau");
             System.out.println("6 - Contagem de Letras");
+            System.out.println("7 - Se a Palavra está contida na outra");
+            System.out.println("8 - Gera Vetor Aleatório");
+            System.out.println("9 - Gera Vetor Maior");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
             opcao = sc.nextInt();
@@ -133,6 +189,12 @@ public class Menu {
             	equacao();
             }else if (opcao == 6){
             	contagem_letra();
+            }else if(opcao == 7){
+            	palavra_contida();
+            }else if (opcao == 8){
+            	VetorAleatorio();
+            }else if(opcao == 9){
+            	vetorMaior();
             }else {
             	System.out.println("Tente novamente!");
             }
